@@ -4,29 +4,29 @@ import { journeySteps } from '../data/mockData';
 
 export default function JourneySection() {
   return (
-    <section className="py-20 bg-white border-b border-slate-100 relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-white border-b border-slate-100 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">
             <span>Our Journey</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-['Outfit']">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl font-extrabold text-slate-900 font-['Outfit']">
             From Collaboration to Impact
           </h2>
-          <p className="text-sm text-slate-600 mt-2">
+          <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-2xl mx-auto">
             A structured, repeatable methodology that turns academic potential into high-caliber industrial software engineering capability.
           </p>
         </div>
 
-        {/* 6 Step Visual Pipeline with crisp sharp boxes */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 relative">
+        {/* 6 Step Visual Pipeline */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 relative">
           {journeySteps.map((step, index) => (
             <div key={step.stepNumber} className="relative flex flex-col items-center text-center group">
               
               {/* Sharp Step Image Container */}
-              <div className="relative w-full h-32 rounded-none overflow-hidden shadow-sm border border-slate-200 bg-slate-100 mb-3 group-hover:shadow-xl group-hover:border-blue-600 transition-all duration-300">
+              <div className="relative w-full h-24 sm:h-32 rounded-xl sm:rounded-none overflow-hidden shadow-sm border border-slate-200 bg-slate-100 mb-2.5 sm:mb-3 group-hover:shadow-xl group-hover:border-blue-600 transition-all duration-300">
                 <img 
                   src={step.image} 
                   alt={step.title}
@@ -35,16 +35,16 @@ export default function JourneySection() {
                 <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors" />
                 
                 {/* Sharp Number Badge */}
-                <div className="absolute top-0 left-0 bg-blue-600 text-white text-[11px] font-black px-2 py-1 shadow-md uppercase tracking-wider">
+                <div className="absolute top-0 left-0 bg-blue-600 text-white text-[10px] sm:text-[11px] font-black px-1.5 sm:px-2 py-0.5 sm:py-1 shadow-md uppercase tracking-wider">
                   {step.stepNumber}
                 </div>
               </div>
 
               {/* Title & Subtitle */}
-              <h3 className="text-sm font-bold text-slate-900 font-['Outfit'] group-hover:text-blue-600 transition-colors">
+              <h3 className="text-xs sm:text-sm font-bold text-slate-900 font-['Outfit'] group-hover:text-blue-600 transition-colors">
                 {step.title}
               </h3>
-              <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">
+              <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 leading-snug">
                 {step.subtitle}
               </p>
 

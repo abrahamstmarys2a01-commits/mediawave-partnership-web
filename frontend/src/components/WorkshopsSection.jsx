@@ -14,57 +14,57 @@ export default function WorkshopsSection({ onSelectWorkshop }) {
   };
 
   return (
-    <section id="workshops" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="workshops" className="py-16 sm:py-20 md:py-24 bg-slate-50 relative overflow-hidden">
       
       {/* Background radial accent */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-100/50 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[350px] sm:w-[600px] md:w-[800px] h-[300px] sm:h-[400px] bg-blue-100/50 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-14">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/80 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-blue-100/80 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Workshops & Training</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-['Outfit']">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-['Outfit'] leading-tight">
               From Classrooms to Real-World Technology
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 mt-2">
+            <p className="text-xs sm:text-sm md:text-base text-slate-600 mt-1.5 sm:mt-2 max-w-2xl">
               Hands-on workshops, expert architecture guidance and practical live-coding labs.
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
             <button
               onClick={() => handleOpenReview('')}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 text-xs sm:text-sm font-bold transition-all shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 text-xs sm:text-sm font-bold transition-all shadow-sm"
             >
-              <MessageSquarePlus className="w-4 h-4 text-blue-600" />
+              <MessageSquarePlus className="w-4 h-4 text-blue-600 shrink-0" />
               <span>+ Student Review</span>
             </button>
 
             <Link 
               to="/workshops" 
-              className="text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1.5 transition-colors"
+              className="text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 transition-colors whitespace-nowrap"
             >
-              <span>View All Workshops</span>
+              <span>View All</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
 
         {/* 3 Workshop Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {workshops.map((ws) => (
             <div 
               key={ws.id}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover-lift flex flex-col justify-between group glow-border"
+              className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover-lift flex flex-col justify-between group glow-border"
             >
               <div>
                 {/* Workshop Image Banner */}
-                <div className="relative h-48 overflow-hidden bg-slate-900">
+                <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-900">
                   <img 
                     src={ws.image} 
                     alt={ws.title}
@@ -73,7 +73,7 @@ export default function WorkshopsSection({ onSelectWorkshop }) {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
                   
                   {/* Category Pill */}
-                  <div className="absolute top-3 left-3 bg-blue-600/95 backdrop-blur-md text-white text-[10px] font-extrabold px-3 py-1 rounded-full shadow-md uppercase tracking-wider">
+                  <div className="absolute top-3 left-3 bg-blue-600/95 backdrop-blur-md text-white text-[10px] font-extrabold px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-md uppercase tracking-wider">
                     {ws.techCategory}
                   </div>
 
@@ -83,7 +83,7 @@ export default function WorkshopsSection({ onSelectWorkshop }) {
                       e.stopPropagation();
                       handleOpenReview(ws.title);
                     }}
-                    className="absolute top-3 right-3 bg-white/90 hover:bg-white text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1 backdrop-blur-sm transition-all"
+                    className="absolute top-3 right-3 bg-white/95 hover:bg-white text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1 backdrop-blur-sm transition-all"
                   >
                     <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
                     <span>Review</span>
@@ -91,7 +91,7 @@ export default function WorkshopsSection({ onSelectWorkshop }) {
                 </div>
 
                 {/* Card Content */}
-                <div className="p-5 space-y-3.5">
+                <div className="p-4 sm:p-5 space-y-3">
                   <h3 className="font-bold text-base text-slate-900 font-['Outfit'] group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
                     {ws.title}
                   </h3>
@@ -117,21 +117,21 @@ export default function WorkshopsSection({ onSelectWorkshop }) {
               </div>
 
               {/* Action Buttons */}
-              <div className="p-5 pt-0 grid grid-cols-2 gap-2">
+              <div className="p-4 sm:p-5 pt-0 grid grid-cols-2 gap-2">
                 <button
                   onClick={() => handleOpenReview(ws.title)}
-                  className="py-2.5 px-3 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold text-xs transition-all flex items-center justify-center gap-1.5"
+                  className="py-2.5 px-2.5 sm:px-3 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold text-xs transition-all flex items-center justify-center gap-1.5 text-center"
                 >
-                  <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                  <span>Add Review</span>
+                  <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500 shrink-0" />
+                  <span className="truncate">Add Review</span>
                 </button>
 
                 <button
                   onClick={() => onSelectWorkshop(ws)}
-                  className="btn-premium py-2.5 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md shadow-blue-500/20"
+                  className="btn-premium py-2.5 px-2.5 sm:px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md shadow-blue-500/20 text-center"
                 >
-                  <span>Details</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <span className="truncate">Details</span>
+                  <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                 </button>
               </div>
 

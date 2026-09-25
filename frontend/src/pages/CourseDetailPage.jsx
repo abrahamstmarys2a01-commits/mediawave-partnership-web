@@ -27,35 +27,35 @@ export default function CourseDetailPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Hero Header */}
-        <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 p-8 sm:p-12 text-white rounded-3xl shadow-xl relative overflow-hidden">
+        <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 p-5 sm:p-8 md:p-12 text-white rounded-2xl sm:rounded-3xl shadow-xl relative overflow-hidden">
           <div className="relative z-10 max-w-3xl space-y-3">
             <div className="flex flex-wrap gap-2">
-              <span className="bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+              <span className="bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">
                 {course.category}
               </span>
-              <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-semibold px-3 py-1 rounded-full">
+              <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-semibold px-2.5 py-1 rounded-full">
                 {course.level}
               </span>
             </div>
             
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-['Outfit']">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold font-['Outfit'] tracking-tight">
               {course.title}
             </h1>
             
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed">
               {course.fullDesc}
             </p>
           </div>
         </div>
 
         {/* Course Details Breakdown */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 mt-8 sm:mt-12">
           
-          <div className="lg:col-span-8 space-y-8">
+          <div className="lg:col-span-8 space-y-6 sm:space-y-8">
             
             {/* Tech Stack */}
-            <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
-              <h2 className="text-xl font-bold text-slate-900 font-['Outfit']">
+            <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm space-y-4">
+              <h2 className="text-lg sm:text-xl font-bold text-slate-900 font-['Outfit']">
                 Technologies & Tools Covered
               </h2>
               <div className="flex flex-wrap gap-2">

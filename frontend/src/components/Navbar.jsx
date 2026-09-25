@@ -43,14 +43,14 @@ export default function Navbar({ onOpenPartnerModal }) {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'glass-nav shadow-lg shadow-slate-900/5 py-2.5' 
-        : 'bg-white/95 backdrop-blur-md py-3.5 border-b border-slate-100'
+        ? 'glass-nav shadow-lg shadow-slate-900/5 py-2 sm:py-2.5' 
+        : 'bg-white/95 backdrop-blur-md py-2.5 sm:py-3.5 border-b border-slate-100'
     }`}>
-      <div className="w-full max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="flex items-center justify-between">
+      <div className="w-full max-w-[96rem] mx-auto px-3.5 sm:px-6 lg:px-10 xl:px-12">
+        <div className="flex items-center justify-between gap-2">
           
           {/* Logo with official image */}
-          <Link to="/" className="flex items-center group -ml-1 sm:ml-0">
+          <Link to="/" className="flex items-center group shrink-0">
             <Logo variant="dark" size="md" />
           </Link>
 
@@ -74,7 +74,7 @@ export default function Navbar({ onOpenPartnerModal }) {
             })}
           </nav>
 
-          {/* Primary Action Button */}
+          {/* Primary Action Button - Desktop */}
           <div className="hidden lg:flex items-center gap-3">
             <Link
               to="/partner-with-us"
@@ -85,20 +85,20 @@ export default function Navbar({ onOpenPartnerModal }) {
             </Link>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <div className="flex lg:hidden items-center gap-2">
+          {/* Mobile Navigation Controls */}
+          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2">
             <Link
               to="/partner-with-us"
-              className="btn-premium bg-blue-600 text-white text-xs font-bold px-3 py-2 rounded-xl shadow-sm"
+              className="btn-premium bg-blue-600 hover:bg-blue-700 text-white text-[11px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl shadow-sm whitespace-nowrap"
             >
               Partner
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-slate-100 focus:outline-none"
+              className="p-1.5 sm:p-2 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-slate-100 focus:outline-none transition-colors"
               aria-label="Toggle Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 text-slate-900" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
 
@@ -107,8 +107,8 @@ export default function Navbar({ onOpenPartnerModal }) {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-2xl border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-2xl animate-in slide-in-from-top duration-200">
-          <div className="grid grid-cols-2 gap-2 pt-2 pb-3 border-b border-slate-100">
+        <div className="lg:hidden bg-white/98 backdrop-blur-2xl border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-2xl animate-in slide-in-from-top duration-200 max-h-[85vh] overflow-y-auto">
+          <div className="grid grid-cols-2 gap-2 pt-1 pb-3 border-b border-slate-100">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
               return (
@@ -116,13 +116,14 @@ export default function Navbar({ onOpenPartnerModal }) {
                   key={link.name}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-3 py-2.5 rounded-xl text-xs font-bold transition-colors ${
+                  className={`px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-between ${
                     isActive 
-                      ? 'bg-blue-50 text-blue-600' 
+                      ? 'bg-blue-50 text-blue-600 font-extrabold shadow-sm' 
                       : 'text-slate-700 hover:bg-slate-50'
                   }`}
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  {isActive && <div className="w-1.5 h-1.5 rounded-full bg-blue-600" />}
                 </Link>
               );
             })}
@@ -132,16 +133,16 @@ export default function Navbar({ onOpenPartnerModal }) {
             <Link
               to="/partner-with-us"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-blue-600/25"
+              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-blue-600/25 text-sm"
             >
               <span>Partner With Us</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="pt-3 text-xs text-slate-500 flex items-center justify-between px-2 font-medium">
-            <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5 text-blue-600" /> {companyInfo.phone}</span>
-            <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-blue-600" /> {companyInfo.email}</span>
+          <div className="pt-2 text-[11px] sm:text-xs text-slate-500 flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1 font-medium">
+            <span className="flex items-center gap-1.5 truncate"><Phone className="w-3.5 h-3.5 text-blue-600 shrink-0" /> {companyInfo.phone}</span>
+            <span className="flex items-center gap-1.5 truncate"><Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" /> {companyInfo.email}</span>
           </div>
         </div>
       )}
