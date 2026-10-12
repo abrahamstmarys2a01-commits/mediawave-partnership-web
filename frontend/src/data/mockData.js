@@ -113,11 +113,12 @@ export const trustedColleges = [
     partnershipType: "MoU Signed & Training Partner",
     badge: "MoU Signed",
     badge2: "Skill Development Partner",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=80",
-    mouImage: "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=1000&q=80",
+    image: "/workshops/shanmugam-mou-1.jpg",
+    mouImage: "/workshops/shanmugam-mou-1.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+      "/workshops/shanmugam-mou-1.jpg",
+      "/workshops/shanmugam-mou-2.jpg",
+      "/workshops/shanmugam-workshop.jpg"
     ],
     description: "Collaborative training framework focusing on modern Full Stack development, cloud APIs, database architectures, and career placement enablement for engineering students."
   }
@@ -202,10 +203,11 @@ export const mouHighlights = [
     mouSigned: "MoU Signed: 08 Oct 2026",
     title: "Full Stack & Cloud Technologies Skill Alliance",
     shortDesc: "Building full-stack engineering proficiency using React, Node.js, Express, and modern databases.",
-    image: "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=800&q=80",
+    image: "/workshops/shanmugam-workshop.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+      "/workshops/shanmugam-mou-1.jpg",
+      "/workshops/shanmugam-mou-2.jpg",
+      "/workshops/shanmugam-workshop.jpg"
     ],
     scope: [
       "Full Stack Development & REST API Bootcamps",
@@ -272,10 +274,11 @@ export const workshops = [
     attendees: 160,
     shortDesc: "End-to-end full stack web engineering with REST APIs, authentication, and database schemas.",
     fullDesc: "Comprehensive full stack development workshop covering client-side React, Node.js & Express server architecture, MongoDB schema design, JWT authentication, and full stack application deployment.",
-    image: "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=800&q=80",
+    image: "/workshops/shanmugam-workshop.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+      "/workshops/shanmugam-workshop.jpg",
+      "/workshops/shanmugam-mou-1.jpg",
+      "/workshops/shanmugam-mou-2.jpg"
     ],
     instructor: "Full Stack Tech Lead, Media Wave Tech",
     outcomes: ["Full Stack Architecture & REST APIs", "Node.js & Express Server Setup", "MongoDB Database & CRUD Operations", "End-to-End Application Deployment"]
@@ -550,6 +553,33 @@ export const galleryPhotos = [
     date: "24 Feb 2026",
     image: "/mou/krce-mou.png",
     caption: "Official MoU Signing Ceremony with Dr. D. Srinivasan (Principal), Chief Guest, Heads of Departments, and Media Wave Technologies executives."
+  },
+  {
+    id: "gal-shanmugam-mou-1",
+    title: "Full Stack Development & Projector Presentation Hall",
+    category: "MoU Signing",
+    college: "Shanmugam College of Engineering, Thirumaiyam",
+    date: "08 Oct 2026",
+    image: "/workshops/shanmugam-mou-1.jpg",
+    caption: "Media Wave technical training session and live slide presentation in the main lecture auditorium at Shanmugam College of Engineering."
+  },
+  {
+    id: "gal-shanmugam-mou-2",
+    title: "Technical Orientation & Interactive Seminar Session",
+    category: "Workshops",
+    college: "Shanmugam College of Engineering, Thirumaiyam",
+    date: "08 Oct 2026",
+    image: "/workshops/shanmugam-mou-2.jpg",
+    caption: "Students actively participating in interactive full-stack architecture discussions in the auditorium hall."
+  },
+  {
+    id: "gal-shanmugam-workshop",
+    title: "Full Stack Workshop & Seminar Hall Session",
+    category: "Workshops",
+    college: "Shanmugam College of Engineering, Thirumaiyam",
+    date: "08 Oct 2026",
+    image: "/workshops/shanmugam-workshop.jpg",
+    caption: "160+ engineering students attending the interactive Full Stack web architecture workshop session."
   },
   {
     id: "gal-nsn-workshop",
